@@ -11,10 +11,8 @@ import (
 func Parse(sql string) {
 	astNode, err := parse(sql)
 	if err != nil {
-		return
+		fmt.Printf("parse error: %v\n", err.Error())
 	}
-	// var s string = *astNode
-	// return s
 	fmt.Printf("%v\n", *astNode)
 }
 func parse(sql string) (*ast.StmtNode, error) {
