@@ -1,5 +1,5 @@
 #include <stdio.h>
-extern char* go_parse(char* sql_string) __asm__ ("parse_test.main.Parse");
+extern void go_parse(char* sql_string) __asm__ ("parse_test.main.Parse");
 int main() 
 {
     int times=1;
