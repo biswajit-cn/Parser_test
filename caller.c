@@ -12,8 +12,9 @@ int main()
         bytes_read = getline (&string, &size, stdin);
         if(bytes_read!=-1)
         {
-            char* ans_string = go_parse(string);
-            printf("PARSED QUERY : \n %s \n", ans_string);
+            printf("PARSED QUERY : ");
+            go_parse(string);
+            printf("\n");
         }
         else
         {

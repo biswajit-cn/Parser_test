@@ -1,18 +1,21 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/pingcap/parser"
 	"github.com/pingcap/parser/ast"
 	_ "github.com/pingcap/parser/test_driver"
 )
 
-func Parse(sql string) string {
+func Parse(sql string) {
 	astNode, err := parse(sql)
 	if err != nil {
-		return "ERROR"
+		return
 	}
-	var s string = *astNode
-	return s
+	// var s string = *astNode
+	// return s
+	fmt.Printf("%v\n", *astNode)
 }
 func parse(sql string) (*ast.StmtNode, error) {
 	p := parser.New()
